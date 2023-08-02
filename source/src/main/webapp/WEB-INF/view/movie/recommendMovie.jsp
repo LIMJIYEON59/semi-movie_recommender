@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>추천 영화 목록을 출력하는 파일</title>
 </head>
 <body>
 
