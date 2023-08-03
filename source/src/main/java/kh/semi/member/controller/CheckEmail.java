@@ -1,4 +1,4 @@
-package kh.semi.main.controller;
+package kh.semi.member.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class MainServlet
+ * Servlet implementation class CheckEmail
  */
-@WebServlet("/")
-public class MainServlet extends HttpServlet {
+@WebServlet("/checkemail.ajax")
+public class CheckEmail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MainServlet() {
+    public CheckEmail() {
         super();
         // TODO Auto-generated constructor stub
     }
