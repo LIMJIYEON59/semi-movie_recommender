@@ -7,6 +7,6 @@
 <title>메인 페이지</title>
 </head>
 <body>
-	<%@include file="/WEB-INF/view/member/memberlist" %>
+	<%@include file="/WEB-INF/view/member/memberlist.jsp" %>
 </body>
 </html>
