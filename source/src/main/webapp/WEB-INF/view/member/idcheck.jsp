@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>아이디 중복체크</title>
+<title>Insert title here</title>
 </head>
 <body>
 

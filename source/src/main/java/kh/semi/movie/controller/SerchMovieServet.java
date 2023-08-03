@@ -1,4 +1,4 @@
-package kh.semi.member.controller;
+package kh.semi.movie.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
