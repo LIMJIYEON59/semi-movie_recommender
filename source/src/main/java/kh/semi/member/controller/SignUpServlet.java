@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class SignUpServlet
  */
+//회원가입
 @WebServlet("/signup")
 public class SignUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -19,23 +20,37 @@ public class SignUpServlet extends HttpServlet {
      */
     public SignUpServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("여기 Get 들어왔음!!");
+		request.getRequestDispatcher("/WEB-INF/view/member/signup.jsp").forward(request, response);
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+	
+	  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
+		  System.out.println("여기 POST 들어왔음!!");
+			String email = request.getParameter("email");
+			String pwd = request.getParameter("mid");
+			System.out.println("email" + email);
+			System.out.println("pwd" + pwd);
+			int result = 1; // 0이면 저장실패, 1이면 저장성공
+	  
+			if(result > 0) {
+				response.sendRedirect(request.getContextPath()+"/login");
+				
+			}else {
+				
+			}
+			
 
+	  
+	  }
 }

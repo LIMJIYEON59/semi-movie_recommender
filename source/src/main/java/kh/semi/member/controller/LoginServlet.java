@@ -26,16 +26,27 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("login get 진입");
+		request.getRequestDispatcher("/WEB-INF/view/member/login.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println("login Post 진입");
+		
+		int result = 1; // 0이면 로그인실패, 1이면 로그인 성공
+		if(result > 0) {
+			// 로그인 성공하면 
+			// 메인(index)으로 이동
+			response.sendRedirect(request.getContextPath()+"/index");
+		
+		}else {
+			// 로그인 실패하면
+			// 경고창 띄우고 로그인(/login) 화면으로 이동
+			// 경고창 띄우고 메인(/index) 화면으로 이동
+		}
 	}
 
 }

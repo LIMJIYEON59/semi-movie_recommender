@@ -12,6 +12,8 @@ public class MemberVo {
 	private String password;
 	private String nickname;
 	private int ageGroup;
+	
+
 	@Override
 	public String toString() {
 		return "MemberVo [email=" + email + ", password=" + password + ", nickname=" + nickname + ", ageGroup="
