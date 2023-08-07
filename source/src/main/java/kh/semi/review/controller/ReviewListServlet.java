@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+// reviewList에 like는 넣지 않는다.
 /**
  * Servlet implementation class ReviewListServlet
  */
