@@ -6,7 +6,7 @@ public class ReviewVo {
 //	"EMAIL"	VARCHAR2(50)		NOT NULL,
 //	"CONTENT"	VARCHAR2(200)		NOT NULL
 	
-	//좋아요
+	//<좋아요>
 	//여기다가 select문을 해서 넣어준다.
 	private boolean myLiked;	//내가 누른 것
 	private int cntLiked;	    //좋아요 수 카운트
