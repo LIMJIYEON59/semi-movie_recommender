@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MovieInfoServlet
  */
+//영화상세정보
 @WebServlet("/movieinfo")
 public class MovieInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
