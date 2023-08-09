@@ -10,17 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.semi.movie.model.service.MovieService;
 import kh.semi.movie.model.vo.MovieVo;
 
 
 /**
  * Servlet implementation class OpenApiKoficController
  */
-@WebServlet("/OpenApiKoficController")
+//영화 정보를 가져오고 데이터를 준비
+@WebServlet("/openapi")
 public class OpenApiKoficController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	// 영화정보 담음
+	private MovieService service = new MovieService(); //service 객체 생성
+	// 영화정보 담음	//영화 정보를 OpenAPI로 가져와서 movielist에 담는다.
 	private List<MovieVo> movielist = new ArrayList<MovieVo>();
 	
     public OpenApiKoficController() {
@@ -32,7 +34,8 @@ public class OpenApiKoficController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		getDatailFromKobisApi();
+		request.setAttribute("movies", movielist);
 		request.getRequestDispatcher("/WEB-INF/view/kofic/get.jsp").forward(request, response);
 	}
 
@@ -41,7 +44,11 @@ public class OpenApiKoficController extends HttpServlet {
 	 */
 //	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //	}
-	private void getData() {
+	
+	//OpenAPI 호출 및 영화 정보를 가져오는 작업을 한다.
+	//OpenAPI 호출과 데이터 처리 로직을 추가하고 원하는 곳에 호출 
+	private void getDatailFromKobisApi() {
+	
 		
 	}
 }
