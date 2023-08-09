@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import kh.semi.common.jdbc.JdbcTemplate;
+import kh.semi.movie.model.vo.GenreVo;
 import kh.semi.movie.model.vo.MovieVo;
 
 public class MovieDao {
@@ -35,6 +36,34 @@ public class MovieDao {
 		} finally {
 			JdbcTemplate.close(pstmt);
 		}
+		
+		return result;	
+	}
+	
+	//장르 찾기
+	public int searchgenre(Connection conn, String genreTitle) {
+		int result = 0;
+		
+		String query="SELECT COUNT(*) FROM GENRE WHERE GENRE_TITLE=? ";
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, genreTitle);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = rs.getInt(1);	//getInt(1) = 현재 레코드의 첫 번째 칼럼의 값을 가져오는 메서드이다.
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		
+		}finally {
+			JdbcTemplate.close(rs);
+			JdbcTemplate.close(pstmt);
+		}
+		
 		return result;
 	}
 
