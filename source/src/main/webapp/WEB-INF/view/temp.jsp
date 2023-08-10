@@ -5,13 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메인 페이지</title>
+<title>여기 수정</title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/component/header.jsp" />
 
 	<div id="wrap-content">
-		<h2>메인</h2>
+		<h2>여기 수정</h2>
+		여기 넣기
 	</div>
 
 	<jsp:include page="/WEB-INF/view/component/footer.jsp" />

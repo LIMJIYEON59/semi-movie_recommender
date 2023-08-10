@@ -1,0 +1,9 @@
+@charset "UTF-8";
+ol, ul {
+	list-style: none;
+	padding:0;
+}
+ul, li {
+	display: flex;
+	align-items: center;
+}

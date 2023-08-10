@@ -1,12 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 <section>
 	<a href="#">공지사항</a><p>[안내] 티빙 고객센터 카카오 챗봇 및 실시간 채팅 상담 이용 안내
 </section>
@@ -28,5 +21,3 @@
 		<p>사엽자 등록 번호 211-288-8989</p>
 	</div>
 </section>
-</body>
-</html>
