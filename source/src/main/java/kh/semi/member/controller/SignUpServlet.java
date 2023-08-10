@@ -41,8 +41,10 @@ public class SignUpServlet extends HttpServlet {
 			String pwd = request.getParameter("mid");
 			System.out.println("email" + email);
 			System.out.println("pwd" + pwd);
+			
 			int result = 1; // 0이면 저장실패, 1이면 저장성공
-	  
+			
+			//로그인 화면으로 이동
 			if(result > 0) {
 				response.sendRedirect(request.getContextPath()+"/login");
 				
