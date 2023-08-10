@@ -19,9 +19,9 @@ public class JdbcTemplate {
 			e.printStackTrace();
 		}
 		if (conn != null) {
-			System.out.println("== DB 연결 실패");
-		} else {
 			System.out.println("== DB 연결 성공");
+		} else {
+			System.out.println("== DB 연결 실패");
 		}
 		return conn;
 	}
