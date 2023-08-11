@@ -26,6 +26,13 @@ public class SignUpServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 경고창 띄우기 위한 방법 -2
+		String msg = (String) request.getSession().getAttribute("msg");
+		if (msg != null) {
+			request.getSession().removeAttribute("msg");
+			request.setAttribute("msg", msg);
+		}
+		
 		System.out.println("여기 Get 들어왔음!!");
 		request.getRequestDispatcher("/WEB-INF/view/member/signup.jsp").forward(request, response);
 
@@ -48,13 +55,21 @@ public class SignUpServlet extends HttpServlet {
 			
 			//로그인 화면으로 이동
 			if(result > 0) {
-				response.sendRedirect(request.getContextPath()+"/login");
+				System.out.println("회원가입성공");
+				// 경고창 띄우기 위한 방법 -1
+				request.getSession().setAttribute("msg", "회원가입에 성공했습니다.");
+				
+				response.sendRedirect(request.getContextPath()+"/login"); //doGet 호출 // login부분으로 갈거임
 				
 			}else {
+				System.out.println("회원가입실패");
+				//경고창 띄우기 위한 방법 -1
+				request.getSession().setAttribute("msg", "회원가입에 실패했습니다. 다시 입력해주세요.");
+				
+				response.sendRedirect(request.getContextPath() + "/signup"); //doGet호출
 				
 			}
-			
-
+		
 	  
 	  }
 }

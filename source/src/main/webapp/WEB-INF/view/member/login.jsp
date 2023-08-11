@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <!-- 경고창 띄우기 위한 방법 -3 -->
+    <jsp:include page="/WEB-INF/view/msg/msg.jsp"></jsp:include>  
+    
 	<h3>로그인</h3>
 	<hr>
 	<div>
