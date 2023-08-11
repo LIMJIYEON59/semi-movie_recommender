@@ -1,11 +1,16 @@
 package kh.semi.main.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import kh.semi.movie.model.service.MovieService;
+import kh.semi.movie.model.vo.MovieVo;
 
 /**
  * Servlet implementation class MainServlet
@@ -27,6 +32,8 @@ public class MainServlet extends HttpServlet {
 	 */
     // response를 대신할 jsp 파일을 forward한다.
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<MovieVo> movieList = new MovieService().selectList();
+		request.setAttribute("movieList", movieList);
 		request.getRequestDispatcher("/WEB-INF/view/main/index.jsp").forward(request, response);
 	}
 
