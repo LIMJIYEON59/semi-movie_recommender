@@ -13,8 +13,8 @@
 					</form>
 				</li>
 				<li>
-					<a href="<%=request.getContextPath()%>/signup"><p>회원가입</p></a>
-					<a href="<%=request.getContextPath()%>/login"><p>로그인</p></a></li>
+					<a href="${pageContext.request.contextPath }/signup"><p>회원가입</p></a>
+					<a href="${pageContext.request.contextPath }/login"><p>로그인</p></a></li>
 			</ul>
 		</nav>
 	</header>
