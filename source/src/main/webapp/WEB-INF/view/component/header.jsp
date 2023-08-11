@@ -4,6 +4,7 @@
 		<nav>
 			<ul>
 				<li><a href="/smovie/index"><img alt="메인로고" src="${pageContext.request.contextPath }/resource/좋아요.svg"></a></li>
+				<li><a href="${pageContext.request.contextPath }/prefmovie"><p>취향선택</p></a></li>
 				<li>
 					<form action="#(검색결과url)" method="get" class="search-box">
 						<div class="search-box">
@@ -17,5 +18,6 @@
 					<a href="${pageContext.request.contextPath }/login"><p>로그인</p></a></li>
 			</ul>
 		</nav>
+		
 	</header>
 	<%-- <a href="${pagecontext.request.contextpath }/index"></a> --%>
