@@ -6,4 +6,12 @@ ol, ul {
 ul, li {
 	display: flex;
 	align-items: center;
+	
+}
+.grid-3{
+	display: grid;
+	grid-template-columns: auto auto auto;	
+	column-gap: 10px;
+	row-gap:20px;
+
 }
