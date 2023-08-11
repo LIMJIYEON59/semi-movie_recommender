@@ -4,12 +4,70 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import kh.semi.common.jdbc.JdbcTemplate;
 import kh.semi.movie.model.vo.GenreVo;
 import kh.semi.movie.model.vo.MovieVo;
 
 public class MovieDao {
+	public List<MovieVo> selectList(Connection conn) {
+		System.out.println("[MovieDao selectList] -");
+		List<MovieVo> result = new ArrayList<MovieVo>();
+		String query = "SELECT MOVIE_ID, TITLE, OPENING_YEAR, POSTER FROM MOVIE";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				MovieVo vo = new MovieVo(rs.getInt("MOVIE_ID"), rs.getString("TITLE"), rs.getInt("OPENING_YEAR"), rs.getString("POSTER"));
+				
+				result.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JdbcTemplate.close(rs);
+			JdbcTemplate.close(pstmt);
+		}
+		System.out.println("[MovieDao selectList] return: " + result);
+		return result;	
+		
+	}
+	
+	public MovieVo selectOne(Connection conn, int MovieId) {
+		System.out.println("[MovieDao selectOne] -");
+		MovieVo result = null;
+		String query = "SELECT MOVIE_ID, TITLE, OPENING_YEAR, POSTER FROM MOVIE WHERE MOVIE_ID=? ";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, MovieId);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				result = new MovieVo(rs.getInt("MOVIE_ID"), rs.getString("TITLE"), rs.getInt("OPENING_YEAR"), rs.getString("POSTER"));
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JdbcTemplate.close(rs);
+			JdbcTemplate.close(pstmt);
+		}
+		System.out.println("[MovieDao selectOne] return: " + result);
+		return result;	
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	//Connection conn =연결객체, MovieVo vo= 영화 정보를 담고 있는 객체
 	public int insert(Connection conn, MovieVo vo) {
 		int result = 0;
@@ -23,7 +81,7 @@ public class MovieDao {
 		
 		
 		PreparedStatement pstmt = null;	//객체를 선언하고 초기화함, 이 객체는 sql쿼리를 미리 컴파일하여 사용할 준비가 된 상태를 유지한다.
-		ResultSet rs = null;			//객체를 선언하고 초기화한다. 쿼리 실행 결과를 저장하는데 사용됨 //여기서는 insert 작업을 수행하여 결과셋이 필요하지 않다.
+		
 		try {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, vo.getMovieId());	// SQL 쿼리의 첫 번째 매개변수(?)에 영화 ID 값을 설정합니다.

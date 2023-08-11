@@ -1,6 +1,7 @@
 package kh.semi.movie.model.service;
 
 import java.sql.Connection;
+import java.util.List;
 
 import kh.semi.common.jdbc.JdbcTemplate;
 import kh.semi.movie.model.dao.MovieDao;
@@ -9,6 +10,26 @@ import kh.semi.movie.model.vo.MovieVo;
 // MovieDao 클래스의 기능을 활용하여 DBㅇ[ 영화 정보를 삽입하는 역할을 한다. 
 public class MovieService {
 	private MovieDao dao = new MovieDao();
+	public List<MovieVo> selectList() {		
+		List<MovieVo> result = null;
+		
+		Connection conn = JdbcTemplate.getConnection();
+		result = dao.selectList(conn);
+		JdbcTemplate.close(conn);				
+		
+		return result;
+	}
+	
+	public MovieVo selectOne(int movieId) {		
+		MovieVo result = null;
+		
+		Connection conn = JdbcTemplate.getConnection();
+		result = dao.selectOne(conn, movieId);
+		JdbcTemplate.close(conn);				
+		
+		return result;
+	}
+	
 	public int insert(MovieVo vo) {		//영화 정보를 받아와서 DB에 삽입하는 메서드이다.
 		int result = 0;
 		
@@ -18,4 +39,5 @@ public class MovieService {
 		
 		return result;
 	}
+	
 }
