@@ -12,6 +12,18 @@
 
 	<div id="wrap-content">
 		<h2>메인</h2>
+		<div class="grid-3">
+		<c:forEach items="${movieList }" var="vo">
+			<div>
+			<a href="${pageContext.request.contextPath }/movieinfo?mvid=${vo.movieId }">
+				<div>${vo.movieId }</div>
+				<div>${vo.title }</div>
+				<div>${vo.openingYear }</div>
+				<div>${vo.poster }</div>
+			</a>
+			</div>
+		</c:forEach>
+		</div> 
 	</div>
 
 	<jsp:include page="/WEB-INF/view/component/footer.jsp" />
