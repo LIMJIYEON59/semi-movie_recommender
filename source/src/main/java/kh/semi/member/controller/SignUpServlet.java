@@ -37,8 +37,10 @@ public class SignUpServlet extends HttpServlet {
 	
 	  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
 		  System.out.println("여기 POST 들어왔음!!");
+			String nickname = request.getParameter("nickname");
 			String email = request.getParameter("email");
 			String pwd = request.getParameter("mid");
+			System.out.println("nickname" + nickname);
 			System.out.println("email" + email);
 			System.out.println("pwd" + pwd);
 			
