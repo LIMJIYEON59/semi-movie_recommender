@@ -45,13 +45,26 @@
 		function sumbitHandler(){
 			console.log("여기 들어완?")
 			
-			//유효성검사
+			//<유효성검사>
+			//닉네임
 			var nickname =$("[name=mnickname]").val();	//여기 부분만 다름
 			var regEx_nickname = /^[가-힣A-Za-z0-9]{2,10}$/;	//3-11글자,영문자로 시작,숫자,특수기호못씀!
 			if( !regEx_nickname.test(nickname) ){
 				console.log("정규표현식 부적합");
-				alert("닉네임 잘 입력하셈");
+				alert("닉네임이 올바르지 않습니다.");
 				$("[name=mnickname]").focus();
+				return;
+		    }else {
+		    	console.log("정규표현식 적합");
+		    }
+			
+			//이메일 chill2@naver.com 
+			var nickname =$("[name=memail]").val();	//여기 부분만 다름
+			var regEx_memail = /^([A-Za-z0-9_]+)@([A-Za-z]+)\.[A-Za-z]{12,20}$/;	//12-20글자,영문자로 시작,한글 안됨,숫자,특수기호@ 이것만 사용가능
+			if( !regEx_memail.test(memail) ){
+				console.log("정규표현식 부적합");
+				alert("이메일 형식이 올바르지 않습니다.");
+				$("[name=memail]").focus();
 				return;
 		    }else {
 		    	console.log("정규표현식 적합");
