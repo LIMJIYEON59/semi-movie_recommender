@@ -3,7 +3,7 @@
 	<header class="main-header">
 		<nav>
 			<ul>
-				<li><a href="/smovie/index"><img alt="메인로고" src="${pageContext.request.contextPath }/resource/좋아요.svg"></a></li>
+				<li class="logo"><a href="/smovie/index"><img alt="HOME" src="${pageContext.request.contextPath }/resource/img/logo.jpg"  width="50">HOME</a></li>
 				<li><a href="${pageContext.request.contextPath }/prefmovie"><p>취향선택</p></a></li>
 				<li>
 					<form action="#(검색결과url)" method="get" class="search-box">
