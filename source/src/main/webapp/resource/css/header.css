@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.header_weapper{
+	margin: 0 50px;
+	
+}
+/* a태그 밑줄 없애기 */
+a { 
+	text-decoration:none
+}
+a:link{
+	color:black;
+}
+a:visited{
+	color:black;
+}
+
+.catagoties{
+	margin: 0 0 0 24px;
+	
+}
+.search{
+	margin: 0 0 0 600px;
+}
+.log{
+	margin: 0 0 0 24px;
+}
+
+
+
+

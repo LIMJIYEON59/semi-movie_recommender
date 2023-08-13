@@ -4,12 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>메인 페이지</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/header.css">
+	<title>메인 페이지</title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/component/header.jsp" />
-
+	<hr>
 	<div id="wrap-content">
 		<h2>메인</h2>
 		<div class="grid-3">
