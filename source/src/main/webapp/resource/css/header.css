@@ -5,13 +5,13 @@
 	
 }
 /* a태그 밑줄 없애기 */
-a { 
+.header_ul  a { 
 	text-decoration:none
 }
-a:link{
+.header_ul a:link{
 	color:black;
 }
-a:visited{
+.header_ul a:visited{
 	color:black;
 }
 
