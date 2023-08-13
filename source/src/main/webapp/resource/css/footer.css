@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.main_footer{
+	background-color: black;
+	color:#a5a5a7;
+}
+.footer-top-info{
+	text-align: center;
+}
+.footer-top-info a{
+	text-decoration: none;
+	color:white;
+	padding: 0 13px;
+}
+.foter_section{
+	margin: 0 60px;
+	padding: 20px 0 35px;
+}
+
+.foter_topSection .footer-top-info{
+	display:flex;
+	align-items: center;
+}

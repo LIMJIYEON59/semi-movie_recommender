@@ -6,6 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/header.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/footer.css"> 
 	<title>메인 페이지</title>
 </head>
 <body>
