@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class PreferencesServlet
  */
-@WebServlet("/preferences")
+@WebServlet("/prefmovie")
 public class PreferencesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,15 +26,16 @@ public class PreferencesServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("prefmovie get 진입");
 		request.getRequestDispatcher("/WEB-INF/view/movie/prefmovie.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		// TODO Auto-generated method stub
+//		doGet(request, response);
+//	}
 
 }
