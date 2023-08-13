@@ -10,8 +10,8 @@
 </head>
 <body>
     <!-- 경고창 띄우기 위한 방법 -3 -->
-    <jsp:include page="/WEB-INF/view/msg/msg.jsp"></jsp:include>  
-    
+    <jsp:include page="/WEB-INF/view/msg/msg.jsp"></jsp:include>
+    	
 	<h3>회원가입</h3>
 	<hr>
 	<div>
@@ -33,7 +33,7 @@
 				<input type="text" id="mpwd2" name="mpwd2" placeholder="비밀번호 확인">
 			</label>
 			<div>
-				 <input type="button" value="회원가입" onclick="location.href='<%=request.getContextPath()%>/login'">
+				 <input type="button" value="회원가입">
 			</div>
 			<div>이미 아이디가 있으신가요?
 				<a href="<%=request.getContextPath()%>/login">로그인</a>
@@ -75,7 +75,7 @@
 			
 			//비밀번호
 			var pwd =$("[name=mpwd]").val();	
-			var regEx_pwd = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!_#_?_@])[a-zA-Z0-9!_#_?_@]{5,9}$/;  //5-9 대문자, 소문자, 숫자, 특수문자(!_#) 최소1개이상 포함(?=.*(...) 이거 붙여서 쓰면 된다.)
+			var regEx_pwd = /^(?=.*[!_#_?_@])[a-zA-Z0-9!_#_?_@]{4,9}$/;  //5-9  숫자, 특수문자(!_#) 최소1개이상 포함(?=.*(...) 이거 붙여서 쓰면 된다.)
 			if( !regEx_pwd.test(pwd) ){
 				console.log("정규표현식 부적합");
 				alert("비밀번호는 5-9자 입력해주세요.");
