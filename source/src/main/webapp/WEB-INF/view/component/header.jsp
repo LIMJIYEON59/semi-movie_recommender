@@ -27,6 +27,6 @@
 				</div>
 			</div>
 		</nav>
-		
+		<hr>
 	</header>
 	<%-- <a href="${pagecontext.request.contextpath }/index"></a> --%>

@@ -1,1 +1,21 @@
 @charset "UTF-8";
+
+.pref-title {
+	display: flex;
+	align-items: center;
+}
+.pref-genre{
+	background-color:  rgb(242, 242, 242);
+}
+.pref-genre > div input[type=checkbox]{
+	display: block;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 25px;
+	padding: 10px 0;
+	border: 1px solid #000000
+}
+
+.pref-title a{
+	height: 20px;
+} 
