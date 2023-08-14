@@ -3,11 +3,7 @@ ol, ul {
 	list-style: none;
 	padding:0;
 }
-ul, li {
-	display: flex;
-	align-items: center;
-	
-}
+
 .grid-3{
 	display: grid;
 	grid-template-columns: auto auto auto;	
@@ -15,3 +11,4 @@ ul, li {
 	row-gap:20px;
 
 }
+
