@@ -10,6 +10,7 @@ import kh.semi.movie.model.vo.MovieVo;
 // MovieDao 클래스의 기능을 활용하여 DBㅇ[ 영화 정보를 삽입하는 역할을 한다. 
 public class MovieService {
 	private MovieDao dao = new MovieDao();
+	
 	public List<MovieVo> selectList() {		
 		List<MovieVo> result = null;
 		

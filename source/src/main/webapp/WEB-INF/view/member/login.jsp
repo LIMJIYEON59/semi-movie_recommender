@@ -35,7 +35,7 @@
 			// 로그인 실패 조건을 판단하고, 실패 시 경고창을 띄웁니다.
 			if (email !== expectedEmail || password !== expectedPassword) {
 				alert("로그인에 실패하였습니다. 이메일과 비밀번호를 확인해주세요.");
-				event.preventDefault(); // 폼 제출을 막습니다.
+				event.preventDefault(); // 폼 제출을 막는다.
 			}
 		}); 
 	</script>

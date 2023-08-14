@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kh.semi.common.jdbc.JdbcTemplate;
-import kh.semi.movie.model.vo.GenreVo;
 import kh.semi.movie.model.vo.MovieVo;
 
 public class MovieDao {
@@ -38,18 +37,18 @@ public class MovieDao {
 	}
 	
 	public MovieVo selectOne(Connection conn, int MovieId) {
-		System.out.println("[MovieDao selectOne] -");
-		MovieVo result = null;
-		String query = "SELECT MOVIE_ID, TITLE, OPENING_YEAR, POSTER FROM MOVIE WHERE MOVIE_ID=? ";
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		System.out.println("[MovieDao selectOne] -");	// 디버깅을 위한 메세지 출력
+		MovieVo result = null;				// 조회된 영화 정보를 담을 객체
+		String query = "SELECT MOVIE_ID, TITLE, OPENING_YEAR, POSTER FROM MOVIE WHERE MOVIE_ID=? ";	//DB에서 영화 정보를 조회하기 위한 SQL 쿼리
+		PreparedStatement pstmt = null;		// SQL 쿼리를 실행할 PreparedStatement
+		ResultSet rs = null;				// 쿼리 결과를 저장하는 ResultSet
 		try {
-			pstmt = conn.prepareStatement(query);
-			pstmt.setInt(1, MovieId);
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
+			pstmt = conn.prepareStatement(query);//SQL 쿼리 준비
+			pstmt.setInt(1, MovieId);		// 쿼리의 파라미터 설정
+			rs = pstmt.executeQuery();		// 쿼리 실행 및 결과 저장
+			while(rs.next()) {				// ResultSet에 결과가 있는 동안 반복
 				result = new MovieVo(rs.getInt("MOVIE_ID"), rs.getString("TITLE"), rs.getInt("OPENING_YEAR"), rs.getString("POSTER"));
-				
+				// 결과로부터 영화 정보를 가져와서 MovieVo 객체를 생성하여 저장
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -61,11 +60,6 @@ public class MovieDao {
 		return result;	
 		
 	}
-	
-	
-	
-	
-	
 	
 	
 	//Connection conn =연결객체, MovieVo vo= 영화 정보를 담고 있는 객체

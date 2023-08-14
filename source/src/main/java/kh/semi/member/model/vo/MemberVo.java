@@ -13,6 +13,17 @@ public class MemberVo {
 	private String nickname;
 	private int ageGroup;
 	
+	public MemberVo() {
+		super();
+	}
+		
+	public MemberVo(String email, String password, String nickname, int ageGroup) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.nickname = nickname;
+		this.ageGroup = ageGroup;
+	}
 
 	@Override
 	public String toString() {
