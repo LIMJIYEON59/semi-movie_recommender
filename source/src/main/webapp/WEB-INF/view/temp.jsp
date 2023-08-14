@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/header.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/footer.css">
 <title>여기 수정</title>
 </head>
 <body>
