@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/header.css">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/footer.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/review.css"> 
 <title>여기 수정</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
 		<h2>여기 수정</h2>
 		여기 넣기
 	</div>
-
+	<jsp:include page="/WEB-INF/view/movie/review.jsp" />
 	<jsp:include page="/WEB-INF/view/component/footer.jsp" />
 </body>
 </html>

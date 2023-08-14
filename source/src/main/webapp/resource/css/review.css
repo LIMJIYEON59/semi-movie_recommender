@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.comments{
+	padding: 0 350px 0 350px;
+    margin-left: auto;
+    margin-right: auto;
+	box-sizing: border-box;
+	line-height: inherit;
+}
+
+.comment-form{
+	margin-bottom: 12px;
+}
+
+.comment-form {
+	padding: 11px 0 11px 0;
+	border: 0 none;	
+}
+.inner-text-weite{
+	padding: 11px 0 11px 0;
+	border: 0 none;	
+}
+
+/* 버튼 */ 
+.comment-submit{
+	text-align: right;
+	
+}
+
+/* 글 적는 곳 크기 */
+textarea{
+	width: 100%;
+	height: 15%;
+}
