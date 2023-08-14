@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>영화상세정보</title>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/header.css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/footer.css">
+<title>영화상세정보 영화 클릭하면 나오는 화면</title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/component/header.jsp" />
@@ -26,7 +28,7 @@
 			<div>${vo.content }</div>
 		</c:forEach>
 	</div>
-
+	<jsp:include page="/WEB-INF/view/movie/review.jsp" />
 	<jsp:include page="/WEB-INF/view/component/footer.jsp" />
 </body>
 </html>
