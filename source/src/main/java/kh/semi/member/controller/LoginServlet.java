@@ -57,6 +57,9 @@ public class LoginServlet extends HttpServlet {
 			// 로그인 실패하면
 			// 경고창 띄우고 로그인(/login) 화면으로 이동
 			// 경고창 띄우고 메인(/index) 화면으로 이동
+			String message ="로그인 실패했습니다.";
+			request.setAttribute("message", response);
+			request.getRequestDispatcher("/login").forward(request, response);
 		}
 	}
 
