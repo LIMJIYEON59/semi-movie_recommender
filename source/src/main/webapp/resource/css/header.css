@@ -1,6 +1,12 @@
 @charset "UTF-8";
-/* 얘 말 안 들음 */
-.header_weapper ul li  {
+/* 
+.header_ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+} */
+
+.header_ul {
 	display: flex;
 	align-items: center;
 }
@@ -25,7 +31,7 @@
 	
 }
 .search{
-	margin: 0 0 0 600px;
+	margin: 0 0 0 400px;
 }
 .log{
 	margin: 0 0 0 24px;
