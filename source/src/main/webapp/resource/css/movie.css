@@ -11,8 +11,84 @@ ol, ul {
 	row-gap:20px;
 }
 
-.banner-slide ul li{
+/* .banner-slide ul li{
 	width: auto; 
 	position: relative;
+} */
+
+/* 안 먹힘 */
+
+.banner ul li a img {
+    width: 100%;
+    height: auto;
+}
+.banner img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+.banner ul li {
+    margin: 0;
+    line-height: 150%;
+    color: #666;
+    font-weight: 500;
+    word-break: keep-all;
+    font-size: 15px;
+}
+.main-banner{
+    width: 85%;
+    margin-left: 5%;
+}
+
+.banner .bx-prev,
+.banner .bx-next
+{
+    position: absolute;
+    width:  26px;
+    height:  26px;
+    font-size: 0;
+}
+
+.banner .bx-prev {
+    background-image: url("/smovie/resources/img/left.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    right: 78px;
+}
+
+.banner .bx-next {
+    background-image: url("/smovie/resources/img/right.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    right: 0;
+}
+.banner {
+    position: relative;
+    margin-top: 0;
+}
+.banner .bx-controls {
+    position: absolute;
+    top: -25px;
+    right: 5px;
+    width: 70px;
+    padding: 0;
+}
+
+/* .. */
+
+.banner .bx-controls a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.banner-slide{
+    border: 5px solid #fff;	
 }
 

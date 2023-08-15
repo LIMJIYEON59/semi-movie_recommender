@@ -6,33 +6,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- css파일들 -->
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/header.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/footer.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/movie.css">
 
 <title>메인 페이지</title>
 <!-- 슬라이드 -->
-<link rel="stylesheet"href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<!-- bx스타일시트를 로드한다 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"> 
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script src="<%=request.getContextPath()%>/resource/js/movie.js"></script>
+
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/component/header.jsp" />
-	<hr>
 	<div id="wrap-content">
-		<h2>메인</h2>
 		<div class="main-banner">
-			<section class="banner">
+			<div class="banner">
 				<div class="banner-slide">
 					<ul>
-						<li><img alt="영화1" src="/smovie/resource/img/movie1.jpg"></li>	<!-- 경로 -->
-						<li><img alt="영화2" src="/smovie/resource/img/movie2.jpg"></li>
-						<li><img alt="영화3" src="/smovie/resource/img/movie3.jpg"></li>
+						<li><a href="#"><img alt="영화1" src="/smovie/resource/img/movie1.jpg"></a></li>
+						<li><a href="#"><img alt="영화2" src="/smovie/resource/img/movie2.jpg"></a></li>
+						<li><a href="#"><img alt="영화3" src="/smovie/resource/img/movie3.jpg"></a></li>
 					</ul>
 				</div>
-			</section>
+	<!-- 		 	<div class="bx-controls">
+						<a class="bx-prev" href>Prev</a> 
+						<a class="bx-next" href>Next</a>
+				</div>  -->
+			</div>
 		</div>
 		<div class="grid-3">
 			<c:forEach items="${movieList }" var="vo">
