@@ -9,6 +9,10 @@ ol, ul {
 	grid-template-columns: auto auto auto;	
 	column-gap: 10px;
 	row-gap:20px;
+}
 
+.banner-slide ul li{
+	width: auto; 
+	position: relative;
 }
 
