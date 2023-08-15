@@ -27,23 +27,10 @@
 			<section class="banner">
 				<div class="banner-slide">
 					<ul>
-						<li><img alt="영화1" src="/smovie/resource/img/movie1.jpg"></li>
+						<li><img alt="영화1" src="/smovie/resource/img/movie1.jpg"></li>	<!-- 경로 -->
 						<li><img alt="영화2" src="/smovie/resource/img/movie2.jpg"></li>
 						<li><img alt="영화3" src="/smovie/resource/img/movie3.jpg"></li>
 					</ul>
-					<!-- controller 부분 자동 생성 -->
-					<div class="bx-controls">
-						<div class="bx-pager">1 / 3</div>
-						<div class="bx-controls-direction">
-							<a class="bx-prev" href>Prev</a>
-							<!-- 이전버튼  -->
-							<a class="bx-next" href>Next</a>
-							<!-- 다음버튼 -->
-						</div>
-						<div class="bx-controls-auto">
-							<a class="bx-stop" href>Stop</a>
-						</div>
-					</div>
 				</div>
 			</section>
 		</div>
