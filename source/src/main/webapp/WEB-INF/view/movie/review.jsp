@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/review.css"> 
-<title>리뷰</title>
+<title>리뷰 페이지</title>
 </head>
 <body>
 	<hr>
