@@ -1,6 +1,7 @@
 package kh.semi.common.openapi;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import kh.semi.movie.model.service.MovieService;
+
 import kh.semi.movie.model.vo.MovieVo;
 
 
@@ -34,9 +35,7 @@ public class OpenApiKoficController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getDatailFromKobisApi();
-		request.setAttribute("movies", movielist);
-		request.getRequestDispatcher("/WEB-INF/view/kofic/get.jsp").forward(request, response);
+
 	}
 
 	/**
@@ -47,9 +46,6 @@ public class OpenApiKoficController extends HttpServlet {
 	
 	//OpenAPI 호출 및 영화 정보를 가져오는 작업을 한다.
 	//OpenAPI 호출과 데이터 처리 로직을 추가하고 원하는 곳에 호출 
-	private void getDatailFromKobisApi() {
-	
-		
-	}
+
 }
 

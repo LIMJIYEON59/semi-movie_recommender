@@ -2,8 +2,7 @@ package kh.semi.movie.model.vo;
 
 import java.util.List;
 
-
-public class MovieVo {
+public class MovieKoficVo {
 //	<movie>          
 //	------------ -------- ------------- 
 //	MOVIE_ID     NOT NULL NUMBER        
@@ -12,7 +11,7 @@ public class MovieVo {
 //	POSTER       NOT NULL VARCHAR2(200) 
 	
 	
-	private int movieId;
+	private String movieId;
 	private String title;
 	private int openingYear;
 	private String poster;
@@ -21,29 +20,23 @@ public class MovieVo {
 	private List<DirectorVo> directors;
 	private List<GenreVo> genres;
 	
-	public MovieVo() {
+	public MovieKoficVo() {
 		super();
 	}
 
-	public MovieVo(int movieId, String title, int openingYear, String poster) {
-		super();
-		this.movieId = movieId;
-		this.title = title;
-		this.openingYear = openingYear;
-		this.poster = poster;
-	}
 
 	@Override
 	public String toString() {
-		return "MovieVo [movieId=" + movieId + ", title=" + title + ", openingYear=" + openingYear + ", poster="
-				+ poster + "]";
+		return "MovieKoficVo [movieId=" + movieId + ", title=" + title + ", openingYear=" + openingYear + ", poster="
+				+ poster + ", actors=" + actors + ", directors=" + directors + ", genres=" + genres + "]";
 	}
 
-	public int getMovieId() {
+
+	public String getMovieId() {
 		return movieId;
 	}
 
-	public void setMovieId(int movieId) {
+	public void setMovieId(String movieId) {
 		this.movieId = movieId;
 	}
 
