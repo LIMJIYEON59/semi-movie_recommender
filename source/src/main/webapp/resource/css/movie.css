@@ -1,7 +1,6 @@
 @charset "UTF-8";
 ol, ul {
 	list-style: none;
-	padding:0;
 }
 
 .grid-3{
@@ -10,22 +9,17 @@ ol, ul {
 	column-gap: 10px;
 	row-gap:20px;
 }
-
-/* .banner-slide ul li{
-	width: auto; 
-	position: relative;
-} */
-
-/* 안 먹힘 */
-
+/* 메인1 banner */
 .banner ul li a img {
     width: 100%;
     height: auto;
+    display:block;
+    margin:auto;
+    align-items: center;
 }
 .banner img {
     max-width: 100%;
     max-height: 100%;
-    display: block;
 }
 .banner ul li {
     margin: 0;
@@ -36,10 +30,11 @@ ol, ul {
     font-size: 15px;
 }
 .main-banner{
-    width: 85%;
-    margin-left: 5%;
+    align-items: center;
+    padding: 0 50px 0 0;
 }
-
+/* bx버튼 적용안됨 */
+/* 
 .banner .bx-prev,
 .banner .bx-next
 {
@@ -63,7 +58,8 @@ ol, ul {
     background-size: cover;
     bottom: 0;
     right: 0;
-}
+} */
+
 .banner {
     position: relative;
     margin-top: 0;
@@ -76,19 +72,36 @@ ol, ul {
     padding: 0;
 }
 
-/* .. */
-
 .banner .bx-controls a {
-  position: absolute;
-  top: 50%;
-  margin-top: -16px;
-  outline: 0;
-  width: 32px;
-  height: 32px;
-  text-indent: -9999px;
-  z-index: 9999;
+   position: absolute;
+   top: 50%;
+   margin-top: -16px;
+   outline: 0;
+   width: 32px;
+   height: 32px;
+   text-indent: -9999px;
+   z-index: 9999;
 }
 .banner-slide{
-    border: 5px solid #fff;	
+    display:block;
+    margin:auto;
 }
+.banner-slide-bx{
+	position:relative;
+	margin-bottom: 60px;
+}
+
+/* 메인2 info */
+.grid-3 a { 
+	text-decoration:none;	/* 텍스트 밑줄을 없애줌 */
+	text-align: center;
+}
+
+.grid-3 a:link{
+	color:black;			/* 방문하지 않았을 때 검은색 */
+} 
+.grid-3  a:visited{
+	color:black;			/* 방문하지 했을 때 검은색 */
+}
+
 
