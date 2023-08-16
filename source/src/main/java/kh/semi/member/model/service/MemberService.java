@@ -10,18 +10,15 @@ public class MemberService {
 	private MemberDao dao= new MemberDao();
 	
 	// () 매개변수로 받아 정보를 얻음?
-	public MemberVo login( String email, String password ) {
-		MemberVo member = null;
+	public String login(String email) {
+		String result = null;
 		
 		Connection conn = JdbcTemplate.getConnection();
-		
-		// login 메서드를 호출하여 () 매개인자의 정보를 얻어온다.
-		member = dao.login(conn, email,password );
-		
+		result = dao.login(conn, email);
 		JdbcTemplate.close(conn);
 		
+		return result;
 		
-		return member;
 	}
 	// insert -삽입 MemberVo 자료형을 받아온다.
 	public int insert(MemberVo member) {
@@ -33,7 +30,9 @@ public class MemberService {
 		
 		return result;
 	}
-	// update -수정 
+	
+	// update -수정 회원정보수정시 필요함
+	/*
 	public int update(MemberVo member) {
 		int result = 0;
 		
@@ -43,4 +42,5 @@ public class MemberService {
 		
 		return  result;
 	}
+	*/
 }

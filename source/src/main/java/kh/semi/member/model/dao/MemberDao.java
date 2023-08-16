@@ -38,23 +38,21 @@ public class MemberDao {
 		return result;
 	}
 	
-		public  MemberVo login(Connection conn, String email, String password ) {
-		MemberVo member = null;
+		public  String login(Connection conn, String email) {
+			System.out.println("[Member Dao login] email:" + email);
 		
-		String query ="SELECT EMAIL,PASSWORD FROM MEMBER WHERE EMAIL=? AND PASSWORD=?";
-		
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+			String result = null;
+			String query="select password from member where email=?";
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
 		
 		try {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, email);
-			pstmt.setString(2, password);
-			rs =pstmt.executeQuery();
+			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				member = new MemberVo(rs.getString("EMAIL"), rs.getString("PASSWORD"), 
-											rs.getString("NICKNAME"),rs.getInt("AGE_GROUP"));
+				result = rs.getString("password");
 				
 			}
 		} catch (SQLException e) {
@@ -63,10 +61,12 @@ public class MemberDao {
 			JdbcTemplate.close(rs);
 			JdbcTemplate.close(pstmt);
 		}
-		
-		return member;
+		System.out.println("[Member Dao login] return:" + result);
+		return result;
 	}
-	// update- 수정
+		
+	// update- 수정 회원정보수정시 필요함
+	/*
 	public int update(Connection conn, MemberVo member ) {
 		System.out.println("[MemberVo Dao update] member:" + member);
 		int result = 0;
@@ -74,32 +74,7 @@ public class MemberDao {
 		System.out.println("[Member Dao update] return:" + result);
 		return result;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	*/
 	
 
 }

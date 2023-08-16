@@ -16,14 +16,20 @@ public class MemberVo {
 	public MemberVo() {
 		super();
 	}
-		
-	public MemberVo(String email, String password, String nickname, int ageGroup) {
+	
+	public MemberVo(String email, String password, String nickname) {
 		super();
 		this.email = email;
 		this.password = password;
 		this.nickname = nickname;
-		this.ageGroup = ageGroup;
 	}
+
+	public MemberVo(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+
 
 	@Override
 	public String toString() {
