@@ -1,43 +1,35 @@
 @charset "UTF-8";
-/* 
-.header_ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-} */
 
-.header_ul {
+ .header_ul {
 	display: flex;
+	align-items: center;
+	overflow: hidden;
+	margin: 0;
+} 
+
+
+.header_weapper{
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 }
 
-.header_weapper{
-	margin: 0 0 0 30px;
-	
-}
 /* a태그 밑줄 없애기 */
-.header_ul  a { 
+.header_item  a { 
 	text-decoration:none
 }
-.header_ul a:link{
+.header_item a:link{
 	color:black;
 }
-.header_ul a:visited{
+.header_item a:visited{
 	color:black;
 }
-
-.catagoties{
-	margin: 0 0 0 24px;
-	
-}
-.search{
-	margin: 0 0 0 400px;
-}
-.log{
+.header_item{
+	display: flex;
 	margin: 0 0 0 24px;
 }
-
-
-
+.header_item .search-box {
+	display: flex;
+}
 
 
