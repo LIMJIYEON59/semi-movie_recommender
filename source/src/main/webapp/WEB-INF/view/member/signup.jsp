@@ -15,25 +15,24 @@
 	<h3>회원가입</h3>
 	<hr>
 	<div>
-		<%-- <form action="<%=request.getContextPath()%>/signup" method="post"> --%>
-		<form id="frmSignup">
+		<form id="signupForm" action="<%=request.getContextPath()%>/signup" method="post"> 
 			<label> 
-				<input type="text" id="mnickname" name="mnickname" placeholder="닉네임">
+				<input type="text" id="mnickname" name="nickname" placeholder="닉네임">
 			</label> 
 			<br>
 			<label> 
-				<input type="text" id="memail" name="memail" placeholder="이메일">
+				<input type="text" id="memail" name="email" placeholder="이메일">
 			</label> 
 			<br> 
 			<label> 
-				<input type="text" id="mpwd" name="mpwd" placeholder="비밀번호"> <!--비번 타입password -->
+				<input type="text" id="mpwd" name="pwd" placeholder="비밀번호"> <!--비번 타입password -->
 			</label>
 			<br>
 			<label> 
-				<input type="text" id="mpwd2" name="mpwd2" placeholder="비밀번호 확인">
+				<input type="text" id="mpwd2" name="pwd2" placeholder="비밀번호 확인">
 			</label>
 			<div>
-				 <input type="button" value="회원가입">
+				 <input type="submit" value="회원가입">
 			</div>
 			<div>이미 아이디가 있으신가요?
 				<a href="<%=request.getContextPath()%>/login">로그인</a>
@@ -86,17 +85,37 @@
 		    }
 			
 			//비밀번호확인
-			var pwd2 =$("[name=mpwd2]").val();
+			var pwd =$("[name=mpwd]").val();
+			var pwd2 = $("[name=mpwd2]").val(); // 비밀번호 확인 입력 값
 			if( pwd !== pwd2 ){
 				console.log("정규표현식 부적합");
-				alert("비밀번호가 일치하지 않습니다.")
+				alert("비밀번호가 일치하지 않습니다.");
 				$("[name=mpwd2]").focus();
 				return;
 			}else{
 				console.log("정규표현식 적합");
 			}
 		}
-	</script>	
+	</script>
+	<!-- <script>
+		document.getElementById("signupForm").addEventListener("submit", function(event))
+			var nickname = document.getElementsByName("mnickname") [0].value;
+			var email = document.getElementsByName("memail") [0].value;
+			var pwd = document.getElementsByName("mpwd") [0].value;
+			var pwd2 = document.getElementsByName("mpwd2") [0].value;
+			
+			var regEx_nickname = /^[가-힣A-Za-z0-9]{2,10}$/;
+			var regEx_email = /^([A-Za-z0-9_]+)@([A-Za-z]+)\.[A-Za-z]{2,}$/;
+			var regEx_pwd =	/^(?=.*[!_#_?_@])[a-zA-Z0-9!_#_?_@]{4,9}$/;
+	
+			if(!regEx.email.test(email)){
+				alert("이메일 형식이 올바르지 않는다.");
+				event.preventDefault();
+				return;
+				
+			}		
+	</script> -->	
+	
 	
 </body>
 </html>

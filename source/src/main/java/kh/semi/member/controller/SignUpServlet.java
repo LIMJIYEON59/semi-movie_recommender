@@ -1,11 +1,16 @@
 package kh.semi.member.controller;
 
 import java.io.IOException;
+import java.sql.Connection;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import kh.semi.common.jdbc.JdbcTemplate;
+import kh.semi.member.model.dao.MemberDao;
 
 /**
  * Servlet implementation class SignUpServlet
@@ -33,7 +38,7 @@ public class SignUpServlet extends HttpServlet {
 			request.setAttribute("msg", msg);
 		}
 		
-		System.out.println("여기 Get 들어왔음!!");
+		System.out.println("signup get 진입");
 		request.getRequestDispatcher("/WEB-INF/view/member/signup.jsp").forward(request, response);
 
 	}
@@ -43,15 +48,22 @@ public class SignUpServlet extends HttpServlet {
 	 */
 	
 	  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
-		  System.out.println("여기 POST 들어왔음!!");
+		  	System.out.println("sigup Post 진입");
 			String nickname = request.getParameter("nickname");
 			String email = request.getParameter("email");
-			String pwd = request.getParameter("mid");
-			System.out.println("nickname" + nickname);
-			System.out.println("email" + email);
-			System.out.println("pwd" + pwd);
+			String pwd = request.getParameter("pwd");
+			String pwd2 = request.getParameter("pwd2");
 			
 			int result = 1; // 0이면 저장실패, 1이면 저장성공
+			
+			if (pwd.equals(pwd2)) {
+			    Connection conn = JdbcTemplate.getConnection();
+			    MemberDao dao = new MemberDao();
+			    
+			 
+			} else {
+			    System.out.println("비밀번호 불일치");
+			}
 			
 			//로그인 화면으로 이동
 			if(result > 0) {
@@ -59,7 +71,7 @@ public class SignUpServlet extends HttpServlet {
 				// 경고창 띄우기 위한 방법 -1
 				request.getSession().setAttribute("msg", "회원가입에 성공했습니다.");
 				
-				response.sendRedirect(request.getContextPath()+"/login"); //doGet 호출 // login부분으로 갈거임
+				response.sendRedirect(request.getContextPath() + "/login"); //doGet 호출 // login부분으로 갈거임
 				
 			}else {
 				System.out.println("회원가입실패");
@@ -69,7 +81,5 @@ public class SignUpServlet extends HttpServlet {
 				response.sendRedirect(request.getContextPath() + "/signup"); //doGet호출
 				
 			}
-		
-	  
 	  }
 }

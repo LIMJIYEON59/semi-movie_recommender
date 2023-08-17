@@ -1,28 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<jsp:include page="/WEB-INF/view/component/headlink.jsp" />
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <jsp:include page="/WEB-INF/view/msg/msg.jsp"></jsp:include>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/member.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/header.css">
 <title>로그인 페이지</title>
 <!-- 경고창 띄우기 위한 방법 -3 -->
 </head>
 <body>
-	<h3>로그인</h3>
-	<hr>
+	<jsp:include page="/WEB-INF/view/component/header.jsp" />
 	<div class="main-login">
-		<form class="form-container" id="loginForm" action="<%=request.getContextPath()%>/login.do" method="post">
-				<label><input type="text" id="memail" name="email"placeholder="이메일을 입력하세요" required="required"> </label> <br> <!-- name은 Vo에 있는 이름을 쓰는게 좋다. -->
-				<label><input type="text" id="mpwd" name="pwd" placeholder="비밀번호를 입력하세요" required="required"> </label>
-			<div>
-				<input type="submit" value="로그인">
-			</div>
-			<div>
-				회원이 아니신가요? <a href="<%=request.getContextPath()%>/signup">회원가입</a>
-			</div>
-		</form>
+		<h3>로그인</h3>
+		<hr>
+		<div>
+			<form class="form-container" id="loginForm" action="<%=request.getContextPath()%>/login.do" method="post">
+					<label><input type="text" id="memail" name="email"placeholder="이메일을 입력하세요" required="required"> </label> <br> <!-- name은 Vo에 있는 이름을 쓰는게 좋다. -->
+					<label><input type="text" id="mpwd" name="pwd" placeholder="비밀번호를 입력하세요" required="required"> </label>
+				<div>
+					<input type="submit" value="로그인">
+				</div>
+				<div>
+					회원이 아니신가요? <a href="<%=request.getContextPath()%>/signup">회원가입</a>
+				</div>
+			</form>
+		</div>
 	</div>
 	<script>
 		document.getElementById("loginForm").addEventListener("submit", function(event) {

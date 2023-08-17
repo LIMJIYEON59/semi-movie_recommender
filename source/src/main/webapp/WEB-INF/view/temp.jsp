@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/header.css">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/footer.css">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/review.css"> 
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/css/member.css">
 <title>여기 수정</title>
 </head>
 <body>

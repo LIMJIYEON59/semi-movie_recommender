@@ -229,7 +229,9 @@ VALUES (10, '10대');
 --MEMBER
 INSERT INTO MEMBER (EMAIL, PASSWORD, NICKNAME, AGE_GROUP)
 VALUES ('ABC@NAVER.COM', '1234567!', '영화좋아', 10);
+INSERT INTO MEMBER (EMAIL, PASSWORD, NICKNAME, AGE_GROUP)
+VALUES ('kh88@naver.com', 'lclass88!', '가가', 10);
 
-
+select * from member;
 
 commit;
