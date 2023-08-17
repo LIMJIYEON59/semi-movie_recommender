@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="movieMapper1">
+  <resultMap type="MemberVo" id="MemberResultMap1">
+  	<id property="email" column="EMAIL"/> <!-- pk는 id이다. -->
+  	<result property="password" column="password"/>
+  	<result property="nickname" column="nickname"/>
+  	<result property="ageGroup" column="ageGroup"/>	<!-- collection join 안 하면 필요없음 -->
+  </resultMap>
+  <select id="" resultType=""></select>
+</mapper>
