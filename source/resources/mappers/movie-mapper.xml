@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="movieMapper1">
-	<resultMap type="MovieVo" id="MovieResultMap1">
+<resultMap type="MovieVo" id="MovieResultMap1">
 	<id property="movieId" column="MOVIEID"/>
 	<result property="title" column="title"/>
 	<result property="openingYear" column="openingYear"/>
@@ -9,5 +9,9 @@
 	<result property="actors" column="actors"/>
 	<result property="directors" column="directors"/>
 	<result property="genres" column="genres"/>
-	</resultMap>
+</resultMap>
+	<select id="selectList" resultType="MovieResuktMap1" parameterType="_int">
+	
+	
+	</select>	
 </mapper>
